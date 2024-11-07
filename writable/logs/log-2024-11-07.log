@@ -1,0 +1,662 @@
+ERROR - 2024-11-07 01:24:54 --> mysqli_sql_exception: Unknown column '// Include approval_status here products.model' in 'field list' in C:\laragon\www\Final_Capstone\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Final_Capstone\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `user_fo...', 0)
+#1 C:\laragon\www\Final_Capstone\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_fo...')
+#2 C:\laragon\www\Final_Capstone\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_fo...')
+#3 C:\laragon\www\Final_Capstone\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user_fo...', Array, false)
+#4 C:\laragon\www\Final_Capstone\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\Final_Capstone\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\Final_Capstone\app\Models\RentingModel.php(58): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\Final_Capstone\app\Controllers\HistoryController.php(24): App\Models\RentingModel->getRentalsWithUserAndProductInfo('17')
+#8 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+#9 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+#10 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\Final_Capstone\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\Final_Capstone\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2024-11-07 01:24:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column '// Include approval_status here products.model' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = :renting.user_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\RentingModel.php(58): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\HistoryController.php(24): App\Models\RentingModel->getRentalsWithUserAndProductInfo('17')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:24:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column '// Include approval_status here products.model' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = :renting.user_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\RentingModel.php(58): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\HistoryController.php(24): App\Models\RentingModel->getRentalsWithUserAndProductInfo('17')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:24:54 --> [Caused by] mysqli_sql_exception: Unknown column '// Include approval_status here products.model' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = :renting.user_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\RentingModel.php(58): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\HistoryController.php(24): App\Models\RentingModel->getRentalsWithUserAndProductInfo('17')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+ERROR - 2024-11-07 01:29:56 --> mysqli_sql_exception: Unknown column '// Include approval_status here products.model' in 'field list' in C:\laragon\www\Final_Capstone\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Final_Capstone\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `user_fo...', 0)
+#1 C:\laragon\www\Final_Capstone\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_fo...')
+#2 C:\laragon\www\Final_Capstone\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_fo...')
+#3 C:\laragon\www\Final_Capstone\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user_fo...', Array, false)
+#4 C:\laragon\www\Final_Capstone\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\Final_Capstone\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\Final_Capstone\app\Models\RentingModel.php(58): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\Final_Capstone\app\Controllers\HistoryController.php(24): App\Models\RentingModel->getRentalsWithUserAndProductInfo('17')
+#8 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+#9 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+#10 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\Final_Capstone\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\Final_Capstone\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2024-11-07 01:29:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column '// Include approval_status here products.model' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = :renting.user_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\RentingModel.php(58): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\HistoryController.php(24): App\Models\RentingModel->getRentalsWithUserAndProductInfo('17')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:29:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column '// Include approval_status here products.model' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = :renting.user_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\RentingModel.php(58): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\HistoryController.php(24): App\Models\RentingModel->getRentalsWithUserAndProductInfo('17')
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:29:56 --> [Caused by] mysqli_sql_exception: Unknown column '// Include approval_status here products.model' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = \'17\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user_form`.`id` AS `user_id`, `user_form`.`name` AS `user_name`, `user_form`.`email` AS `user_email`, `user_form`.`phone` AS `user_phone`, `user_form`.`address` AS `user_address`, `renting`.`RentalID` AS `rental_id`, `renting`.`FirstLocation`, `renting`.`SecondLocation`, `renting`.`StartDate`, `renting`.`EndDate`, `renting`.`StartTime`, `renting`.`EndTime`, `renting`.`price`, `renting`.`Status`, `renting`.`approval_status`, `// Include approval_status here products`.`model` AS `product_model`, `products`.`price` AS `product_price`
+FROM `renting`
+JOIN `user_form` ON `user_form`.`id` = `renting`.`user_id`
+JOIN `products` ON `products`.`id` = `renting`.`product_id`
+WHERE `renting`.`user_id` = :renting.user_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\RentingModel.php(58): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\HistoryController.php(24): App\Models\RentingModel->getRentalsWithUserAndProductInfo('17')
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:30:31 --> ErrorException: Undefined array key "RentalID"
+in APPPATH\Views\combined_history.php on line 223.
+ 1 APPPATH\Views\combined_history.php(223): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentalID"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 223)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:34:23 --> ErrorException: Undefined array key "RentalID"
+in APPPATH\Views\combined_history.php on line 223.
+ 1 APPPATH\Views\combined_history.php(223): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentalID"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 223)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:35:04 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\combined_history.php on line 222.
+ 1 APPPATH\Views\combined_history.php(222): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 222)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:36:52 --> ErrorException: Undefined array key "approval_status"
+in APPPATH\Controllers\Rental.php on line 331.
+ 1 APPPATH\Controllers\Rental.php(331): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "approval_status"', 'C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\Rental.php', 331)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->declineRental('39')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:37:09 --> ErrorException: Undefined array key "approval_status"
+in APPPATH\Controllers\Rental.php on line 317.
+ 1 APPPATH\Controllers\Rental.php(317): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "approval_status"', 'C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\Rental.php', 317)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->acceptRental('39')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:37:24 --> ErrorException: Undefined array key "approval_status"
+in APPPATH\Controllers\Rental.php on line 331.
+ 1 APPPATH\Controllers\Rental.php(331): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "approval_status"', 'C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\Rental.php', 331)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->declineRental('39')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:37:34 --> ErrorException: Undefined array key "approval_status"
+in APPPATH\Controllers\Rental.php on line 331.
+ 1 APPPATH\Controllers\Rental.php(331): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "approval_status"', 'C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\Rental.php', 331)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->declineRental('39')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 01:37:43 --> ErrorException: Undefined array key "approval_status"
+in APPPATH\Controllers\Rental.php on line 317.
+ 1 APPPATH\Controllers\Rental.php(317): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "approval_status"', 'C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\Rental.php', 317)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->acceptRental('39')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 05:35:34 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 278.
+ 1 APPPATH\Views\user\renting.php(278): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 278)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 05:47:13 --> Error: Call to undefined method App\Controllers\Rental::getCarById()
+in APPPATH\Controllers\Rental.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->index()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 05:48:09 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 278.
+ 1 APPPATH\Views\user\renting.php(278): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 278)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 05:48:20 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 278.
+ 1 APPPATH\Views\user\renting.php(278): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 278)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 07:09:25 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 970.
+ 1 SYSTEMPATH\BaseModel.php(970): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PaymentController.php(84): CodeIgniter\Model->update('27', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->toggleApproval('27')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 07:09:59 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 970.
+ 1 SYSTEMPATH\BaseModel.php(970): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PaymentController.php(84): CodeIgniter\Model->update('27', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->toggleApproval('27')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 07:32:14 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 970.
+ 1 SYSTEMPATH\BaseModel.php(970): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(812): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Models\PurchaseHistoryModel.php(71): CodeIgniter\Model->update('27', [...])
+ 4 APPPATH\Controllers\ProductController.php(174): App\Models\PurchaseHistoryModel->updateApprovalStatus('27', true)
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\ProductController->toggleApproval('27')
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 10:13:09 --> Error: Call to undefined method CodeIgniter\View\View::getStatusColor()
+in APPPATH\Views\admin\rental_management.php on line 421.
+ 1 [internal function]: CodeIgniter\View\View->{closure}([...])
+ 2 APPPATH\Views\admin\rental_management.php(433): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\rental_management.php')
+ 4 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_management', [], true)
+ 6 APPPATH\Controllers\Rental.php(146): view('admin/rental_management', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:32:55 --> ErrorException: Undefined array key "status"
+in APPPATH\Views\combined_history.php on line 227.
+ 1 APPPATH\Views\combined_history.php(227): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 227)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:33:14 --> ErrorException: Undefined array key "RentStatus"
+in APPPATH\Views\combined_history.php on line 227.
+ 1 APPPATH\Views\combined_history.php(227): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentStatus"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 227)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:36:26 --> ErrorException: Undefined array key "RentStatus"
+in APPPATH\Views\combined_history.php on line 227.
+ 1 APPPATH\Views\combined_history.php(227): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentStatus"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 227)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:37:44 --> ErrorException: Undefined array key "RentStatus"
+in APPPATH\Views\combined_history.php on line 230.
+ 1 APPPATH\Views\combined_history.php(230): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentStatus"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 230)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:38:28 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\combined_history.php on line 234.
+ 1 APPPATH\Views\combined_history.php(234): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 234)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:38:47 --> ErrorException: Undefined array key "RentalID"
+in APPPATH\Views\combined_history.php on line 234.
+ 1 APPPATH\Views\combined_history.php(234): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentalID"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 234)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:46:27 --> ErrorException: Undefined array key "RentStatus"
+in APPPATH\Views\combined_history.php on line 230.
+ 1 APPPATH\Views\combined_history.php(230): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentStatus"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 230)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:47:30 --> ErrorException: Undefined array key "RentStatus"
+in APPPATH\Views\combined_history.php on line 230.
+ 1 APPPATH\Views\combined_history.php(230): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentStatus"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 230)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 12:51:17 --> ErrorException: Undefined array key "product_model"
+in APPPATH\Views\admin\returnees_list.php on line 30.
+ 1 APPPATH\Views\admin\returnees_list.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_model"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\returnees_list.php', 30)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\returnees_list.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/returnees_list', [], true)
+ 5 APPPATH\Controllers\Rental.php(357): view('admin/returnees_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminReturnees()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 13:09:49 --> ErrorException: Undefined array key "user_name"
+in APPPATH\Views\admin\returnees_list.php on line 32.
+ 1 APPPATH\Views\admin\returnees_list.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_name"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\returnees_list.php', 32)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\returnees_list.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/returnees_list', [], true)
+ 5 APPPATH\Controllers\Rental.php(357): view('admin/returnees_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminReturnees()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 14:58:46 --> ErrorException: Undefined variable $rental
+in APPPATH\Views\returnees.php on line 41.
+ 1 APPPATH\Views\returnees.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rental', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php', 41)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('returnees', [], true)
+ 5 APPPATH\Controllers\Rental.php(381): view('returnees', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->viewReturnees()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 14:59:59 --> ErrorException: Undefined variable $rental
+in APPPATH\Views\returnees.php on line 41.
+ 1 APPPATH\Views\returnees.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rental', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php', 41)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('returnees', [], true)
+ 5 APPPATH\Controllers\Rental.php(381): view('returnees', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->viewReturnees()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 15:00:12 --> ErrorException: Undefined variable $rental
+in APPPATH\Views\returnees.php on line 41.
+ 1 APPPATH\Views\returnees.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rental', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php', 41)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('returnees', [], true)
+ 5 APPPATH\Controllers\Rental.php(381): view('returnees', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->viewReturnees()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 15:03:17 --> ErrorException: Undefined variable $returnedRentals
+in APPPATH\Views\returnees.php on line 41.
+ 1 APPPATH\Views\returnees.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $returnedRentals', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php', 41)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('returnees', [], true)
+ 5 APPPATH\Controllers\Rental.php(380): view('returnees', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->viewReturnees()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 15:03:27 --> ErrorException: Undefined variable $rental
+in APPPATH\Views\returnees.php on line 41.
+ 1 APPPATH\Views\returnees.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rental', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php', 41)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\returnees.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('returnees', [], true)
+ 5 APPPATH\Controllers\Rental.php(380): view('returnees', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->viewReturnees()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 15:41:27 --> ParseError: syntax error, unexpected token "public", expecting end of file
+in APPPATH\Controllers\HistoryController.php on line 8.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\HistoryController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\HistoryController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\HistoryController')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\HistoryController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 15:42:08 --> BadMethodCallException: Call to undefined method App\Models\RentingModel::getValidIdImage
+in SYSTEMPATH\Model.php on line 879.
+ 1 APPPATH\Controllers\HistoryController.php(31): CodeIgniter\Model->__call('getValidIdImage', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+ERROR - 2024-11-07 16:15:31 --> mysqli_sql_exception: Unknown column 'ReturnStatus' in 'where clause' in C:\laragon\www\Final_Capstone\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\Final_Capstone\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\Final_Capstone\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\Final_Capstone\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\Final_Capstone\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\Final_Capstone\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\Final_Capstone\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\Final_Capstone\app\Controllers\Rental.php(382): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(943): App\Controllers\Rental->viewAllReturns()
+#8 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+#9 C:\laragon\www\Final_Capstone\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\Final_Capstone\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\Final_Capstone\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-11-07 16:15:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ReturnStatus' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `renting`
+WHERE `user_id` = :user_id:
+AND `ReturnStatus` = :ReturnStatus:', [...], false)
+ 2 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Rental.php(382): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->viewAllReturns()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 16:15:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ReturnStatus' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `renting`
+WHERE `user_id` = \'17\'
+AND `ReturnStatus` = \'Returned\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `renting`
+WHERE `user_id` = \'17\'
+AND `ReturnStatus` = \'Returned\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `renting`
+WHERE `user_id` = :user_id:
+AND `ReturnStatus` = :ReturnStatus:', [...], false)
+ 4 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Rental.php(382): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->viewAllReturns()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 16:15:31 --> [Caused by] mysqli_sql_exception: Unknown column 'ReturnStatus' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `renting`
+WHERE `user_id` = \'17\'
+AND `ReturnStatus` = \'Returned\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `renting`
+WHERE `user_id` = \'17\'
+AND `ReturnStatus` = \'Returned\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `renting`
+WHERE `user_id` = \'17\'
+AND `ReturnStatus` = \'Returned\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `renting`
+WHERE `user_id` = :user_id:
+AND `ReturnStatus` = :ReturnStatus:', [...], false)
+ 5 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Rental.php(382): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->viewAllReturns()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 16:20:07 --> ErrorException: Undefined array key "RentStatus"
+in APPPATH\Views\combined_history.php on line 268.
+ 1 APPPATH\Views\combined_history.php(268): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentStatus"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 268)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 16:21:29 --> ErrorException: Undefined array key "RentStatus"
+in APPPATH\Views\combined_history.php on line 268.
+ 1 APPPATH\Views\combined_history.php(268): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentStatus"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 268)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 16:22:04 --> ErrorException: Undefined array key "RentStatus"
+in APPPATH\Views\combined_history.php on line 268.
+ 1 APPPATH\Views\combined_history.php(268): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "RentStatus"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php', 268)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\combined_history.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 5 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-07 16:23:45 --> ParseError: syntax error, unexpected token "endforeach", expecting "elseif" or "else" or "endif"
+in APPPATH\Views\combined_history.php on line 275.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('combined_history', [], true)
+ 3 APPPATH\Controllers\HistoryController.php(39): view('combined_history', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HistoryController->combinedHistory()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HistoryController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')

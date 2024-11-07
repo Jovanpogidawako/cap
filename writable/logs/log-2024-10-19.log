@@ -1,0 +1,28 @@
+CRITICAL - 2024-10-19 07:41:41 --> ErrorException: Undefined array key "statusColor"
+in APPPATH\Views\admin\rental_management.php on line 233.
+ 1 APPPATH\Views\admin\rental_management.php(233): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "statusColor"', 'C:\\laragon\\www\\cappppp-main\\app\\Views\\admin\\rental_management.php', 233)
+ 2 [internal function]: CodeIgniter\View\View->{closure}([...])
+ 3 APPPATH\Views\admin\rental_management.php(240): array_map(Object(Closure), [...])
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\cappppp-main\\app\\Views\\admin\\rental_management.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_management', [], true)
+ 7 APPPATH\Controllers\Rental.php(58): view('admin/rental_management', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\cappppp-main\\public\\index.php')
+CRITICAL - 2024-10-19 07:44:40 --> ErrorException: Undefined array key "statusColor"
+in APPPATH\Views\admin\rental_management.php on line 233.
+ 1 APPPATH\Views\admin\rental_management.php(233): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "statusColor"', 'C:\\laragon\\www\\cappppp-main\\app\\Views\\admin\\rental_management.php', 233)
+ 2 [internal function]: CodeIgniter\View\View->{closure}([...])
+ 3 APPPATH\Views\admin\rental_management.php(240): array_map(Object(Closure), [...])
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\cappppp-main\\app\\Views\\admin\\rental_management.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_management', [], true)
+ 7 APPPATH\Controllers\Rental.php(58): view('admin/rental_management', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\cappppp-main\\public\\index.php')

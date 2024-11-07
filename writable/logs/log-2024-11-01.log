@@ -1,0 +1,128 @@
+CRITICAL - 2024-11-01 16:09:09 --> Error: Class "App\Controllers\ProductModel" not found
+in APPPATH\Controllers\HomeController.php on line 42.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->renta('31')
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:19:08 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 290.
+ 1 APPPATH\Views\user\renting.php(290): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 290)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent('31')
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:23:36 --> ErrorException: Undefined variable $data
+in APPPATH\Controllers\ProductController.php on line 166.
+ 1 APPPATH\Controllers\ProductController.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\ProductController.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\ProductController->rents('31')
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:27:45 --> ArgumentCountError: Too few arguments to function App\Controllers\ProductController::trial(), 0 passed in C:\laragon\www\Final_Capstone\system\CodeIgniter.php on line 943 and exactly 1 expected
+in APPPATH\Controllers\ProductController.php on line 162.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\ProductController->trial()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:28:03 --> ParseError: syntax error, unexpected token "{", expecting "("
+in APPPATH\Controllers\ProductController.php on line 163.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:42:35 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 290.
+ 1 APPPATH\Views\user\renting.php(290): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 290)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:50:49 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 290.
+ 1 APPPATH\Views\user\renting.php(290): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 290)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:57:36 --> ErrorException: Undefined variable $user_name
+in APPPATH\Views\user\renting.php on line 307.
+ 1 APPPATH\Views\user\renting.php(307): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_name', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 307)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:58:00 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 292.
+ 1 APPPATH\Views\user\renting.php(292): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 292)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:58:01 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 292.
+ 1 APPPATH\Views\user\renting.php(292): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 292)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 16:58:32 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 292.
+ 1 APPPATH\Views\user\renting.php(292): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 292)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-01 17:08:22 --> ErrorException: Undefined variable $car
+in APPPATH\Views\user\renting.php on line 290.
+ 1 APPPATH\Views\user\renting.php(290): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $car', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php', 290)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\user\\renting.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('user/renting', [], true)
+ 5 APPPATH\Controllers\HomeController.php(37): view('user/renting')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\HomeController->rent()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')

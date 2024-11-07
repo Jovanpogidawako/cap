@@ -1,0 +1,186 @@
+ERROR - 2024-10-26 03:18:24 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\finalcapstone\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\laragon\www\finalcapstone\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'caps_db', 3306, '', 0)
+#1 C:\laragon\www\finalcapstone\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\finalcapstone\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\finalcapstone\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\finalcapstone\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\finalcapstone\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\finalcapstone\app\Controllers\Rental.php(56): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\finalcapstone\system\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+#8 C:\laragon\www\finalcapstone\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+#9 C:\laragon\www\finalcapstone\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\finalcapstone\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\finalcapstone\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\finalcapstone\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\finalcapstone\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\finalcapstone\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\finalcapstone\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\finalcapstone\system\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\finalcapstone\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\finalcapstone\app\Controllers\Rental.php(56): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\finalcapstone\system\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+#7 C:\laragon\www\finalcapstone\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+#8 C:\laragon\www\finalcapstone\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\finalcapstone\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\finalcapstone\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2024-10-26 03:18:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `renting`', [], false)
+ 3 SYSTEMPATH\Model.php(243): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Rental.php(56): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 03:51:59 --> ParseError: syntax error, unexpected single-quoted string "startTime", expecting "]"
+in APPPATH\Views\admin\rental_management.php on line 300.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_management', [], true)
+ 3 APPPATH\Controllers\Rental.php(76): view('admin/rental_management', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 03:52:14 --> ErrorException: Undefined variable $price
+in APPPATH\Views\admin\rental_management.php on line 299.
+ 1 APPPATH\Views\admin\rental_management.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $price', 'C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_management.php', 299)
+ 2 [internal function]: CodeIgniter\View\View->{closure}([...])
+ 3 APPPATH\Views\admin\rental_management.php(304): array_map(Object(Closure), [...])
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_management.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_management', [], true)
+ 7 APPPATH\Controllers\Rental.php(76): view('admin/rental_management', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 03:52:44 --> ErrorException: Undefined variable $price
+in APPPATH\Views\admin\rental_management.php on line 299.
+ 1 APPPATH\Views\admin\rental_management.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $price', 'C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_management.php', 299)
+ 2 [internal function]: CodeIgniter\View\View->{closure}([...])
+ 3 APPPATH\Views\admin\rental_management.php(304): array_map(Object(Closure), [...])
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_management.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_management', [], true)
+ 7 APPPATH\Controllers\Rental.php(76): view('admin/rental_management', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 03:52:46 --> ErrorException: Undefined variable $price
+in APPPATH\Views\admin\rental_management.php on line 299.
+ 1 APPPATH\Views\admin\rental_management.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $price', 'C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_management.php', 299)
+ 2 [internal function]: CodeIgniter\View\View->{closure}([...])
+ 3 APPPATH\Views\admin\rental_management.php(304): array_map(Object(Closure), [...])
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_management.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_management', [], true)
+ 7 APPPATH\Controllers\Rental.php(76): view('admin/rental_management', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->adminIndex()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 05:48:09 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout/default.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout/default.php')
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/default', [], true)
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_map', [], true)
+ 4 APPPATH\Controllers\Rental.php(208): view('admin/rental_map')
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->showMap()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 05:58:51 --> ErrorException: Undefined variable $rentals
+in APPPATH\Views\admin\rental_map.php on line 47.
+ 1 APPPATH\Views\admin\rental_map.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rentals', 'C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_map.php', 47)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_map.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_map', [], true)
+ 5 APPPATH\Controllers\Rental.php(208): view('admin/rental_map')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->showMap()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 05:59:11 --> ErrorException: Undefined variable $rentals
+in APPPATH\Views\admin\rental_map.php on line 47.
+ 1 APPPATH\Views\admin\rental_map.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rentals', 'C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_map.php', 47)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_map.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_map', [], true)
+ 5 APPPATH\Controllers\Rental.php(208): view('admin/rental_map')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->showMap()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 06:19:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "rental/map.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('rental/map.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('rental/map', [], true)
+ 3 APPPATH\Controllers\Rental.php(211): view('rental/map', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->showMap()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 06:19:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admiin/rental_map.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admiin/rental_map.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admiin/rental_map', [], true)
+ 3 APPPATH\Controllers\Rental.php(211): view('admiin/rental_map', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->showMap()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 06:19:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout/default.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout/default.php')
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layout/default', [], true)
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_map', [], true)
+ 4 APPPATH\Controllers\Rental.php(211): view('admin/rental_map', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->showMap()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 06:28:13 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\admin\rental_map.php on line 117.
+ 1 APPPATH\Views\admin\rental_map.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_map.php', 117)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\finalcapstone\\app\\Views\\admin\\rental_map.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/rental_map', [], true)
+ 5 APPPATH\Controllers\Rental.php(211): view('admin/rental_map', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->showMap()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')
+CRITICAL - 2024-10-26 06:58:46 --> ErrorException: file_get_contents(https://nominatim.openstreetmap.org/search?format=json&amp;q=sa+malayo): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\Rental.php on line 230.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/search?format=json&amp;q=sa+malayo): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\laragon\\www\\finalcapstone\\app\\Controllers\\Rental.php', 230)
+ 2 APPPATH\Controllers\Rental.php(230): file_get_contents('https://nominatim.openstreetmap.org/search?format=json&q=sa+malayo')
+ 3 APPPATH\Controllers\Rental.php(218): App\Controllers\Rental->getCoordinates('sa malayo')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->getRentalLocations()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\finalcapstone\\public\\index.php')

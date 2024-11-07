@@ -1,0 +1,85 @@
+ERROR - 2024-10-11 01:58:19 --> mysqli_sql_exception: Unknown column 'payments.car_model_id' in 'on clause' in C:\laragon\www\cappppp-main\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\cappppp-main\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `payment...', 0)
+#1 C:\laragon\www\cappppp-main\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `payment...')
+#2 C:\laragon\www\cappppp-main\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `payment...')
+#3 C:\laragon\www\cappppp-main\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `payment...', Array, false)
+#4 C:\laragon\www\cappppp-main\app\Models\PaymentModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\cappppp-main\app\Controllers\PaymentController.php(32): App\Models\PaymentModel->getPaymentsWithCarDetails()
+#6 C:\laragon\www\cappppp-main\system\CodeIgniter.php(943): App\Controllers\PaymentController->checkout()
+#7 C:\laragon\www\cappppp-main\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+#8 C:\laragon\www\cappppp-main\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\cappppp-main\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\cappppp-main\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2024-10-11 01:58:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'payments.car_model_id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `payments`.*, `products`.`image` as `car_image`, `products`.`model` as `car_model`, `products`.`price` as `car_price`
+FROM `payments`
+JOIN `products` ON `payments`.`car_model_id` = `products`.`id`', [], false)
+ 2 APPPATH\Models\PaymentModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\PaymentController.php(32): App\Models\PaymentModel->getPaymentsWithCarDetails()
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->checkout()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\cappppp-main\\public\\index.php')
+CRITICAL - 2024-10-11 01:58:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'payments.car_model_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `payments`.*, `products`.`image` as `car_image`, `products`.`model` as `car_model`, `products`.`price` as `car_price`
+FROM `payments`
+JOIN `products` ON `payments`.`car_model_id` = `products`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `payments`.*, `products`.`image` as `car_image`, `products`.`model` as `car_model`, `products`.`price` as `car_price`
+FROM `payments`
+JOIN `products` ON `payments`.`car_model_id` = `products`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `payments`.*, `products`.`image` as `car_image`, `products`.`model` as `car_model`, `products`.`price` as `car_price`
+FROM `payments`
+JOIN `products` ON `payments`.`car_model_id` = `products`.`id`', [], false)
+ 4 APPPATH\Models\PaymentModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\PaymentController.php(32): App\Models\PaymentModel->getPaymentsWithCarDetails()
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->checkout()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\cappppp-main\\public\\index.php')
+CRITICAL - 2024-10-11 01:58:20 --> [Caused by] mysqli_sql_exception: Unknown column 'payments.car_model_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `payments`.*, `products`.`image` as `car_image`, `products`.`model` as `car_model`, `products`.`price` as `car_price`
+FROM `payments`
+JOIN `products` ON `payments`.`car_model_id` = `products`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `payments`.*, `products`.`image` as `car_image`, `products`.`model` as `car_model`, `products`.`price` as `car_price`
+FROM `payments`
+JOIN `products` ON `payments`.`car_model_id` = `products`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `payments`.*, `products`.`image` as `car_image`, `products`.`model` as `car_model`, `products`.`price` as `car_price`
+FROM `payments`
+JOIN `products` ON `payments`.`car_model_id` = `products`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `payments`.*, `products`.`image` as `car_image`, `products`.`model` as `car_model`, `products`.`price` as `car_price`
+FROM `payments`
+JOIN `products` ON `payments`.`car_model_id` = `products`.`id`', [], false)
+ 5 APPPATH\Models\PaymentModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\PaymentController.php(32): App\Models\PaymentModel->getPaymentsWithCarDetails()
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->checkout()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\cappppp-main\\public\\index.php')
+CRITICAL - 2024-10-11 04:47:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "payment_management.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('payment_management.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('payment_management', [], true)
+ 3 APPPATH\Controllers\PaymentController.php(96): view('payment_management', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->paymentManagement()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\cappppp-main\\public\\index.php')
+CRITICAL - 2024-10-11 07:25:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "payment_management.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('payment_management.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('payment_management', [], true)
+ 3 APPPATH\Controllers\PaymentController.php(62): view('payment_management', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\cappppp-main\\public\\index.php')
