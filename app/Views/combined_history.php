@@ -256,65 +256,51 @@
                                 <a href="<?= base_url('uploads/valid_ids/' . $rental['valid_id_image']) ?>" target="_blank">View Full Size</a>
                             </div>
                         <?php endif; ?>
+                        <a href="<?= base_url('user/returned_rentals') ?>">View Returned Rentals</a>
+
+                        <?php if ($rental['Status'] === 'Ongoing' && ($rental['RentStatus'] ?? '') !== 'returned'): ?>
+                            <button class="return-button" onclick="returnRental(<?= $rental['rental_id'] ?>)">Return</button>
+                        <?php else: ?>
+                            <button class="return-button returned" disabled>Returned</button>
+                        <?php endif; ?>
+                        <?php if ($rental['approval_status'] === 'approved'): ?>
+    <div class="detail-item">
+        <a href="<?= base_url('rentals/agreement/' . $rental['rental_id']) ?>" 
+           class="download-agreement-btn" 
+           style="background-color: #4CAF50; 
+                  color: white; 
+                  padding: 8px 15px; 
+                  border-radius: 5px; 
+                  text-decoration: none; 
+                  display: inline-block; 
+                  margin-top: 10px;">
+            Download Rental Agreement
+        </a>
+    </div>
+<?php endif; ?>
+
                     </div>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
             <p>No rental history available.</p>
-        <?php endif; ?>
-    </div><div id="returnModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Rental Successfully Returned!</h2>
-            <p id="penaltyInfo"></p>
-            <a href="<?= site_url('rental/view-all-returns') ?>" class="btn btn-primary">View All Returns</a>
-        </div>
-    </div>
-
+        <?php endif; ?>       
+    </body>
     <script>
-        function returnRental(rentalId) {
-            fetch(`<?= site_url('rental/returnees/') ?>${rentalId}`, {
-                method: 'POST',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Content-Type': 'application/json',
-                },
-            })
+function returnRental(rentalId) {
+    if (confirm("Are you sure you want to return this rental?")) {
+        fetch(`<?= base_url('rentals/return') ?>/${rentalId}`, { method: 'POST' })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    document.getElementById('penaltyInfo').textContent = data.penalty > 0 
-                        ? `A penalty of $${data.penalty} has been applied for late return.` 
-                        : 'No penalty applied. Thank you for returning on time!';
-                    document.getElementById('returnModal').style.display = 'block';
-                    // Change the return button to "Returned"
-                    const returnBtn = document.querySelector(`button[onclick="returnRental(${rentalId})"]`);
-                    returnBtn.innerHTML = '<i class="fas fa-check"></i> Returned';
-                    returnBtn.disabled = true;
-                    returnBtn.classList.remove('return-btn');
-                    returnBtn.classList.add('returned-btn');
+                    alert("Successfully returned the rental!");
+                    location.reload(); // Refresh page to show "Returned" status
                 } else {
-                    alert('Error returning rental. Please try again.');
+                    alert("Failed to return the rental.");
                 }
             })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while processing your request.');
-            });
-        }
-
-        // Close the modal when clicking on <span> (x)
-        document.querySelector('.close').onclick = function() {
-            document.getElementById('returnModal').style.display = 'none';
-        }
-
-        // Close the modal when clicking outside of it
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('returnModal')) {
-                document.getElementById('returnModal').style.display = 'none';
-            }
-        }
-    </script>
-        
-    </body>
-    <html></html>
+            .catch(error => console.error('Error:', error));
+    }
+}
+</script>
+</html>

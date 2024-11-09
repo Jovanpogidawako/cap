@@ -1,0 +1,94 @@
+ERROR - 2024-11-09 02:22:49 --> Rental submission attempted without user_id in session
+CRITICAL - 2024-11-09 03:40:31 --> ErrorException: Undefined array key "id_image"
+in APPPATH\Views\admin\payment_management.php on line 180.
+ 1 APPPATH\Views\admin\payment_management.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_image"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\payment_management.php', 180)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\payment_management.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/payment_management', [], true)
+ 5 APPPATH\Controllers\PaymentController.php(83): view('admin/payment_management', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-09 03:42:19 --> ErrorException: Undefined array key "id_image"
+in APPPATH\Views\admin\payment_management.php on line 180.
+ 1 APPPATH\Views\admin\payment_management.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_image"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\payment_management.php', 180)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\payment_management.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/payment_management', [], true)
+ 5 APPPATH\Controllers\PaymentController.php(83): view('admin/payment_management', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-09 03:42:22 --> ErrorException: Undefined array key "id_image"
+in APPPATH\Views\admin\payment_management.php on line 180.
+ 1 APPPATH\Views\admin\payment_management.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_image"', 'C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\payment_management.php', 180)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\Final_Capstone\\app\\Views\\admin\\payment_management.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/payment_management', [], true)
+ 5 APPPATH\Controllers\PaymentController.php(83): view('admin/payment_management', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\PaymentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PaymentController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-09 03:57:21 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\ProductController.php on line 124.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\ProductController->submitPayment()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-09 03:59:31 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\ProductController.php on line 114.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\ProductController->submitPayment()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-09 04:00:39 --> ErrorException: Undefined variable $filePath
+in APPPATH\Controllers\ProductController.php on line 136.
+ 1 APPPATH\Controllers\ProductController.php(136): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filePath', 'C:\\laragon\\www\\Final_Capstone\\app\\Controllers\\ProductController.php', 136)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\ProductController->submitPayment()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-09 06:14:50 --> Error: Class "App\Controllers\ProductModel" not found
+in APPPATH\Controllers\Rental.php on line 382.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Rental->showAgreement('42')
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rental))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')
+CRITICAL - 2024-11-09 06:24:17 --> ErrorException: Trait "App\Controllers\TCPDF" not found
+in APPPATH\Controllers\Rental.php on line 10.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-09 06:25:25 --> ErrorException: App\Controllers\Rental cannot use TCPDF - it is not a trait
+in APPPATH\Controllers\Rental.php on line 12.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-09 06:26:16 --> ErrorException: App\Controllers\Rental cannot use TCPDF - it is not a trait
+in APPPATH\Controllers\Rental.php on line 12.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-09 06:26:22 --> ErrorException: App\Controllers\Rental cannot use TCPDF - it is not a trait
+in APPPATH\Controllers\Rental.php on line 12.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-09 06:28:10 --> ErrorException: App\Controllers\Rental cannot use TCPDF - it is not a trait
+in APPPATH\Controllers\Rental.php on line 12.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-09 06:29:23 --> ErrorException: App\Controllers\Rental cannot use TCPDF - it is not a trait
+in APPPATH\Controllers\Rental.php on line 12.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-09 06:30:46 --> ErrorException: App\Controllers\Rental cannot use TCPDF - it is not a trait
+in APPPATH\Controllers\Rental.php on line 12.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-09 06:59:23 --> Error: Class "App\Controllers\TCPDF" not found
+in APPPATH\Controllers\ProductController.php on line 198.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\ProductController->generateAgreement('27')
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\Final_Capstone\\public\\index.php')

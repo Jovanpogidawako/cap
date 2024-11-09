@@ -42,4 +42,5 @@ menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
 })
 </script>
+<script src="<?= base_url('js/script.js') ?>"></script>
 </html>

@@ -6,6 +6,8 @@ use App\Models\ProductModel;
 use App\Models\PaymentModel;
 use App\Models\PurchaseHistoryModel;
 use CodeIgniter\Controller;
+use TCPDF;
+
 
 class ProductController extends Controller
 {
@@ -109,15 +111,6 @@ class ProductController extends Controller
         $productModel = new ProductModel();
         $purchaseHistoryModel = new PurchaseHistoryModel();
 
-        // Validate and handle image upload
-        $image = $this->request->getFile('payment-image');
-        if ($image->isValid() && !$image->hasMoved()) {
-            $newName = $image->getRandomName();
-            $image->move(WRITEPATH . 'uploads', $newName);
-            $filePath = 'uploads/' . $newName;
-        } else {
-            return redirect()->back()->with('error', 'Failed to upload image.');
-        }
 
         // Get the logged-in user's ID
         $userId = session()->get('user_id');
@@ -142,7 +135,6 @@ class ProductController extends Controller
 
         // Save the payment image
         $productId = $this->request->getPost('car_model');
-        $productModel->savePaymentImage($productId, $filePath);
 
         return redirect()->to('/carslist')->with('success', 'Purchase completed successfully!');
     }
@@ -187,6 +179,46 @@ class ProductController extends Controller
     
         return $this->response->setJSON(['success' => $result]);
     }
-    
+   
 
+    public function generateAgreement($purchaseId)
+    {
+        $purchaseModel = new PurchaseHistoryModel();
+        $purchase = $purchaseModel->find($purchaseId);
+
+        if (!$purchase) {
+            return $this->response->setJSON(['error' => 'Purchase not found']);
+        }
+
+        // Check if purchase is approved
+        if (!$purchase['is_approved']) {
+            return $this->response->setJSON(['error' => 'Purchase agreement is only available for approved purchases']);
+        }
+
+        // Create new PDF document
+        $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+        // Set document information
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('Luxury Car Sales');
+        $pdf->SetTitle('Purchase Agreement');
+        $pdf->SetSubject('Purchase Agreement for ' . $purchase['car_model']);
+
+        // Remove default header/footer
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+
+        // Add a page
+        $pdf->AddPage();
+
+        // HTML content for the agreement
+        $html = view('purchase_agreement_pdf', ['purchase' => $purchase]);
+
+        // Print text using writeHTMLCell()
+        $pdf->writeHTML($html, true, false, true, false, '');
+
+        // Close and output PDF document
+        $pdf->Output('purchase_agreement.pdf', 'D');
+        exit;
+    }
 }

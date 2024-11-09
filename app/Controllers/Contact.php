@@ -32,7 +32,7 @@ class Contact extends Controller
         ]);
 
         if (!$this->validate($validation->getRules())) {
-            return view('contact_form', [
+            return view('layout/contacts', [
                 'validation' => $this->validator,
             ]);
         }

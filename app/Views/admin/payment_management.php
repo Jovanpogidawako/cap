@@ -165,49 +165,46 @@
     </style>
 </head>
 <<body>
-    <div class="dashboard">
-        <div class="header">
-            <h1>Sales Dashboard</h1>
-        </div>
+<div class="dashboard">
+    <div class="header">
+        <h1>Sales Dashboard</h1>
+    </div>
 
-        <div class="sales-grid">
-            <?php foreach ($purchases as $purchase): ?>
-            <div class="sale-card">
-                <div class="car-image-container">
-                    <img src="<?= esc($purchase['car_image']) ?>" alt="Image of <?= esc($purchase['car_model']) ?>">
+    <div class="sales-grid">
+        <?php foreach ($purchases as $purchase): ?>
+        <div class="sale-card">
+            <div class="car-image-container">
+                <img src="<?= esc($purchase['car_image']) ?>" alt="Image of <?= esc($purchase['car_model']) ?>">
+            </div>
+            <div class="sale-info">
+                <div class="date">
+                    <i class="far fa-calendar"></i>
+                    <?= date('F j, Y', strtotime($purchase['purchase_date'])) ?>
                 </div>
-                <div class="sale-info">
-                    <div class="date">
-                        <i class="far fa-calendar"></i>
-                        <?= date('F j, Y', strtotime($purchase['purchase_date'])) ?>
+                <div class="car-model"><?= esc($purchase['car_model']) ?></div>
+                <div class="price">₱<?= number_format($purchase['price'], 2) ?></div>
+                <div class="payment-method">
+                    <i class="fas fa-credit-card"></i>
+                    <?= esc($purchase['payment_method']) ?>
+                </div>
+                <div class="customer-info">
+                    <div>
+                        <i class="far fa-user"></i>
+                        <?= esc($purchase['customer_name']) ?>
                     </div>
-                    <div class="car-model"><?= esc($purchase['car_model']) ?></div>
-                    <div class="price">₱<?= number_format($purchase['price'], 2) ?></div>
-                    <div class="payment-method">
-                        <i class="fas fa-credit-card"></i>
-                        <?= esc($purchase['payment_method']) ?>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <?= esc($purchase['customer_address']) ?>
                     </div>
-                    <div class="customer-info">
-                        <div>
-                            <i class="far fa-user"></i>
-                            <?= esc($purchase['customer_name']) ?>
-                        </div>
-                        <div>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <?= esc($purchase['customer_address']) ?>
-                        </div>
-                    </div>
-                    <div class="payment-status">
-    <span class="status-label">Approval Status: <?= $purchase['is_approved'] ? 'Approved' : 'Pending' ?></span>
-    <?php if ($purchase['is_approved']): ?>
-        <button class="disapprove-btn" onclick="updateApprovalStatus(<?= esc($purchase['id']) ?>, false)">Disapprove</button>
-    <?php else: ?>
-        <button class="approve-btn" onclick="updateApprovalStatus(<?= esc($purchase['id']) ?>, true)">Approve</button>
-    <?php endif; ?>
-</div>
-
-
-
+                </div>
+                <div class="payment-status">
+                    <span class="status-label">Approval Status: <?= $purchase['is_approved'] ? 'Approved' : 'Pending' ?></span>
+                    <?php if ($purchase['is_approved']): ?>
+                        <button class="disapprove-btn" onclick="updateApprovalStatus(<?= esc($purchase['id']) ?>, false)">Disapprove</button>
+                    <?php else: ?>
+                        <button class="approve-btn" onclick="updateApprovalStatus(<?= esc($purchase['id']) ?>, true)">Approve</button>
+                    <?php endif; ?>
+                </div>
                     <!-- Add delete button form -->
                     <form action="/delete_purchase/<?= esc($purchase['id']) ?>" method="post" style="margin-top: 1rem;">
                         <?= csrf_field() ?>

@@ -15,15 +15,32 @@ class PaymentController extends BaseController
     }  
     public function submit()  
     {  
+        $fileIDImage = $this->request->getFile('id-image');
+        $filePaymentImage = $this->request->getFile('payment-image');
+    
+        // Upload valid ID image if exists
+        $idImagePath = null;
+        if ($fileIDImage->isValid() && !$fileIDImage->hasMoved()) {
+            $idImagePath = $fileIDImage->store('uploads/id_images', $fileIDImage->getRandomName());
+        }
+    
+        // Upload payment image if exists
+        $paymentImagePath = null;
+        if ($filePaymentImage->isValid() && !$filePaymentImage->hasMoved()) {
+            $paymentImagePath = $filePaymentImage->store('uploads/payment_images', $filePaymentImage->getRandomName());
+        }
+    
+        // Gather other data
         $data = [  
-            'user_id' => session()->get('user_id'), // Get user ID from session
-            'car_model' => $this->request->getPost('car_model'), // Ensure this exists in your form
-            'car_image' => $this->request->getPost('car_image'), // Ensure this exists in your form
-            'price' => $this->request->getPost('price'), // Ensure this exists in your form
-            'payment_method' => $this->request->getPost('payment-method'),  
-            'purchase_date' => date('Y-m-d H:i:s'),  
-            // Other purchase details...
-        ];  
+            'user_id' => session()->get('user_id'),
+            'car_model' => $this->request->getPost('car_model'),
+            'car_image' => $this->request->getPost('car_image'),
+            'price' => $this->request->getPost('price'),
+            'payment_method' => $this->request->getPost('payment-method'),
+            'purchase_date' => date('Y-m-d H:i:s'),
+            'id_image' => $idImagePath, // Save the path to the database
+            'payment_image' => $paymentImagePath,
+        ];
     
         // Log the purchase
         $purchaseHistoryModel = new PurchaseHistoryModel();
@@ -33,6 +50,7 @@ class PaymentController extends BaseController
             return redirect()->back()->withInput()->with('errors', $purchaseHistoryModel->errors());  
         }  
     }
+    
 
     public function update($id)  
     {  

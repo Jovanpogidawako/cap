@@ -236,5 +236,13 @@ $routes->get('/contact/delete/(:num)', 'Contact::delete/$1');
 $routes->post('rent/accept-rental/(:num)', 'Rental::acceptRental/$1');
 $routes->post('rent/decline-rental/(:num)', 'Rental::declineRental/$1');
 $routes->post('product/toggleApproval/(:num)', 'ProductController::toggleApproval/$1');
-$routes->get('rental/view-all-returns', 'Rental::viewAllReturns');
-$routes->get('admin/view-returns', 'Rental::adminViewReturns');
+
+
+$routes->post('rentals/return/(:num)', 'Rental::returnRental/$1');
+$routes->get('/returned_rentals', 'Rental::viewReturnedRentals');
+$routes->get('user/returned_rentals', 'Rental::userReturnedRentals');
+
+$routes->get('rentals/print-agreement/(:num)', 'Rental::printAgreement/$1');
+// In app/Config/Routes.php
+$routes->get('rentals/agreement/(:num)', 'Rental::showAgreement/$1');
+$routes->get('purchase/agreement/(:num)', 'ProductController::generateAgreement/$1');

@@ -4,7 +4,10 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\RentingModel;
+use App\Models\ProductModel;
 use DateTime;
+use TCPDF; // This is correct. Importing TCPDF as a class.
+
 
 class Rental extends BaseController
 {
@@ -329,4 +332,86 @@ class Rental extends BaseController
        } else {
            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to decline rental']);
        }
-   }}
+   }
+   public function returnRental($rentalId)
+   {
+       $rentingModel = new RentingModel();
+   
+       // Update the rental status to 'Returned'
+       $result = $rentingModel->updateRentalStatus($rentalId, 'returned');
+   
+       if ($result) {
+           return $this->response->setJSON(['success' => true, 'message' => 'Rental returned successfully.']);
+       } else {
+           return $this->response->setJSON(['success' => false, 'message' => 'Failed to return rental.']);
+       }
+   }
+   
+   public function viewReturnedRentals()
+   {
+       $rentingModel = new RentingModel();
+       $returnedRentals = $rentingModel->getReturnedRentalsWithDetails();
+   
+       return view('admin/returned_rentals', ['returnedRentals' => $returnedRentals]);
+   }
+   
+
+   public function userReturnedRentals()
+   {
+       $rentingModel = new RentingModel();
+       $userId = session()->get('user_id');  // Assumes a logged-in user's ID is stored in session
+       
+       // Retrieve only returned rentals for this user
+       $returnedRentals = $rentingModel->getReturnedRentalsWithDetails($userId);
+   
+       return view('user/returned_rentals', ['returnedRentals' => $returnedRentals]);
+   }
+// Add this method to your Rental controller
+
+
+public function showAgreement($rentalId)
+{
+    $model = new RentingModel();
+    $rental = $model->find($rentalId);
+
+    if (!$rental) {
+        return redirect()->back()->with('error', 'Rental not found');
+    }
+
+    // Check if rental is approved
+    if ($rental['approval_status'] !== 'approved') {
+        return redirect()->back()->with('error', 'Agreement is only available for approved rentals');
+    }
+
+    // Get product model details
+    $productModel = new ProductModel();
+    $product = $productModel->find($rental['product_id']);
+    $rental['product_model'] = $product ? $product['model'] : 'Unknown Model';
+
+    // Generate PDF
+    $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+    // Set document information
+    $pdf->SetCreator(PDF_CREATOR);
+    $pdf->SetAuthor('Luxury Car Rentals');
+    $pdf->SetTitle('Rental Agreement');
+    $pdf->SetSubject('Rental Agreement for ' . $rental['Name']);
+
+    // Remove default header/footer
+    $pdf->setPrintHeader(false);
+    $pdf->setPrintFooter(false);
+
+    // Add a page
+    $pdf->AddPage();
+
+    // HTML content
+    $html = view('rental_agreement_pdf', ['rental' => $rental]);
+
+    // Print text using writeHTMLCell()
+    $pdf->writeHTML($html, true, false, true, false, '');
+
+    // Close and output PDF document
+    $pdf->Output('rental_agreement.pdf', 'D');
+    exit;
+}
+}

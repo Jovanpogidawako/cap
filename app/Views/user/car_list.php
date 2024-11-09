@@ -717,12 +717,6 @@
                     <option value="face-to-face">Face to Face Interaction</option>
                 </select>
 
-                <!-- Add image upload field -->
-                <div class="upload-container">
-                    <label for="payment-image">Upload Payment Image (e.g., receipt or proof):</label>
-                    <input type="file" id="payment-image" name="payment-image" accept="image/*" required>
-                </div>
-
                 <button type="submit"><i class="fas fa-credit-card"></i> Complete Payment</button>
             </form>
         </div>

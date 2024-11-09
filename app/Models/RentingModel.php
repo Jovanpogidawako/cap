@@ -51,6 +51,7 @@ class RentingModel extends Model
                 renting.Status, 
                 renting.approval_status, 
                 renting.valid_id_image,
+                renting.RentStatus, 
                 products.model AS product_model, 
                 products.price AS product_price
             ')
@@ -113,7 +114,7 @@ class RentingModel extends Model
             ->where('renting.RentalID', $rentalId)
             ->first();
     }
-    public function getAllReturnees($userId)
+    public function getAllReturnees()
     {
         return $this->select('
                 renting.RentalID AS rental_id, 
@@ -126,14 +127,13 @@ class RentingModel extends Model
                 renting.price, 
                 renting.RentStatus,
                 products.model AS product_model, 
-                user_form.name AS user_name, 
+                user_form.name AS user_name,  // Ensure user_name is included
                 user_form.email AS user_email, 
                 user_form.phone AS user_phone
             ')
             ->join('user_form', 'user_form.id = renting.user_id')
             ->join('products', 'products.id = renting.product_id')
             ->where('renting.RentStatus', 'Returned')
-            ->where('renting.user_id', $userId)
             ->findAll();
     }
     
@@ -154,4 +154,37 @@ public function uploadValidId($rentalId, $image)
         $rental = $this->select('valid_id_image')->find($rentalId);
         return $rental ? $rental['valid_id_image'] : null;
     }
+    public function returnRental($rentalId)
+{
+    return $this->update($rentalId, ['RentStatus' => 'returned']);
+}
+public function getReturnedRentalsWithDetails($userId = null)
+{
+    $builder = $this->select('
+        renting.RentalID AS rental_id, 
+        renting.FirstLocation, 
+        renting.SecondLocation, 
+        renting.StartDate, 
+        renting.EndDate, 
+        renting.StartTime, 
+        renting.EndTime, 
+        renting.price, 
+        renting.RentStatus,
+        products.model AS product_model, 
+        user_form.name AS user_name, 
+        user_form.email AS user_email, 
+        user_form.phone AS user_phone
+    ')
+    ->join('user_form', 'user_form.id = renting.user_id')
+    ->join('products', 'products.id = renting.product_id')
+    ->where('renting.RentStatus', 'returned');
+
+    // If userId is provided, filter for that user's returned rentals
+    if ($userId) {
+        $builder->where('renting.user_id', $userId);
+    }
+
+    return $builder->findAll();
+}
+
 }

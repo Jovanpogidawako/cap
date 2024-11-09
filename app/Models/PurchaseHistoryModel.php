@@ -21,7 +21,8 @@ class PurchaseHistoryModel extends Model
         'payment_status',
         'product_id',
         'user_id',
-        'is_approved' // Add is_approved field
+        'is_approved',
+        // Add is_approved field
     ];
     protected $useTimestamps = true;
     protected $createdField = 'purchase_date';
